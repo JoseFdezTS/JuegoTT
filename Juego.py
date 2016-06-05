@@ -14,7 +14,6 @@ pygame.mixer.pre_init(44100, -16, 2, 2048)
 #pygame.mixer.music.load("sonidos/instrumental.wav")
 #pygame.mixer.music.load("sonidos/Power of NEO.mp3")
 #pygame.mixer.music.play(5)
-#Nada
 
 "Lineas "
 #pygame.draw.line(screen,color,(80,80),(90,90),9)
@@ -279,12 +278,8 @@ while True:
     mouse = pygame.mouse.get_pressed()
     posicion=pygame.mouse.get_pos(posicionmousex, posicionmousey)
     velocidad=20
-    if len(jugadorx)>=3 or len(jugadoro)>=3:
-        print(ganador())
     if ganador()!=None:
         velocidad=5
-        tiempodecierre = (pygame.time.get_ticks() / 1000)
-        print (tiempodecierre)
     if len(jugadorx)>=5 or len(jugadoro)>=5:
         break
     else:
