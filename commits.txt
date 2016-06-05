@@ -1,0 +1,41 @@
+commit 30874c38ad5fc838c82e73db0cc597b1d5659639
+Author: Jose Ramon <josefdez92@gmail.com>
+Date:   Tue May 31 14:59:19 2016 -0400
+
+    Nada Interesante
+
+commit 1af869d946f9f470eb91056fee5901cea7d4076b
+Author: Jose Ramon <josefdez92@gmail.com>
+Date:   Tue May 31 14:46:10 2016 -0400
+
+    Arreglos basicos
+
+commit df7a804002c392c378502cd5f9eeeef956e3d38b
+Author: Jose Ramon <josefdez92@gmail.com>
+Date:   Tue May 31 14:39:07 2016 -0400
+
+    pruebas de ramas
+
+commit 3508a7e323d1ebd941af88ac43356070d8ad25c0
+Author: Jose Ramon <josefdez92@gmail.com>
+Date:   Tue May 31 14:37:28 2016 -0400
+
+    pruebas de ramas
+
+commit d0d58ac03b6e2ebac12566bf22ea7ebb2b574a4e
+Author: Jose Ramon <josefdez92@gmail.com>
+Date:   Tue May 31 14:02:22 2016 -0400
+
+    Prueba2
+
+commit 5729bec1cc0793565fd72ebfa5a8dd43e9c69a46
+Author: Jose Ramon <josefdez92@gmail.com>
+Date:   Tue May 31 13:45:19 2016 -0400
+
+    Prueba1
+
+commit 9a338d97b056ac16b578416c815f81aa58ca63b3
+Author: Jose Ramon <josefdez92@gmail.com>
+Date:   Tue May 31 13:39:11 2016 -0400
+
+    Primer_Paso
