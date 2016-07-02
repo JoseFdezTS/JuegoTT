@@ -67,9 +67,9 @@ screen.blit(enturno, (520, 275))
 "Comprobador de ganador jugador"
 jugadorx=[]
 jugadoro=[]
-Matrix=([[3,3,3],
-        [3,3,3],
-        [3,3,3,]])
+Matrix=([[None,None,None],
+        [None,None,None],
+        [None,None,None,]])
 
 "Estado de las jugadas"
 estadofigura = [False, False]
@@ -299,48 +299,64 @@ while True:
             if estado[1] == False:
                 numero = 1
                 valor2 = click(numero)
+                Matrix[1][0] = numero
+                print(Matrix[1])
                 screen.blit(valor2, (30, 260))
 
         if posicion in posicion3 and mouse[0] == True or posicion in posicion3 and mouse[2] == True:
             if estado[2] == False:
                 numero = 2
                 valor3 = click(numero)
+                Matrix[2][0] = numero
+                print(Matrix[1])
                 screen.blit(valor3, (30,420))
 
         if posicion in posicion4 and mouse[0] == True or posicion in posicion4 and mouse[2] == True:
             if estado[3] == False:
                 numero = 3
                 valor4 = click(numero)
+                Matrix[0][1] = numero
+                print(Matrix[0])
                 screen.blit(valor4, (180, 105))
 
         if posicion in posicion5 and mouse[0] == True or posicion in posicion5 and mouse[2] == True:
             if estado[4] == False:
                 numero = 4
                 valor5 = click(numero)
+                Matrix[1][1] = numero
+                print(Matrix[1])
                 screen.blit(valor5, (180, 260))
 
         if posicion in posicion6 and mouse[0] == True or posicion in posicion6 and mouse[2] == True:
             if estado[5] == False:
                 numero = 5
                 valor6 = click(numero)
+                Matrix[2][1] = numero
+                print(Matrix[2])
                 screen.blit(valor6, (180, 420))
 
         if posicion in posicion7 and mouse[0] == True or posicion in posicion7 and mouse[2] == True:
             if estado[6] == False:
                 numero = 6
                 valor7 = click(numero)
+                Matrix[0][2] = numero
+                print(Matrix[0])
                 screen.blit(valor7, (335, 105))
 
         if posicion in posicion8 and mouse[0] == True or posicion in posicion8 and mouse[2] == True:
             if estado[7] == False:
                 numero = 7
                 valor8 = click(numero)
+                Matrix[1][2] = numero
+                print(Matrix[1])
                 screen.blit(valor8, (335, 260))
 
         if posicion in posicion9 and mouse[0] == True or posicion in posicion9 and mouse[2] == True:
             if estado[8] == False:
                 numero = 8
                 valor9 = click(numero)
+                Matrix[2][2] = numero
+                print(Matrix[2])
                 screen.blit(valor9, (335, 420))
     numero=None
     pygame.display.flip()
@@ -351,3 +367,4 @@ while True:
             pygame.quit()
             exit(0)
     tiempodeactualizacion.tick(velocidad)
+    print (Matrix)
