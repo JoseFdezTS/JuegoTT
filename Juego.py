@@ -67,9 +67,9 @@ screen.blit(enturno, (520, 275))
 "Comprobador de ganador jugador"
 jugadorx=[]
 jugadoro=[]
-Matrix=[[3,3,3]
-        [3,3,3]
-        [3,3,3,]]
+Matrix=([[3,3,3],
+        [3,3,3],
+        [3,3,3,]])
 
 "Estado de las jugadas"
 estadofigura = [False, False]
@@ -291,6 +291,8 @@ while True:
             if estado[0] == False:
                 numero=0
                 valor = click(numero)
+                Matrix[0][0]=numero
+                print(Matrix[0])
                 screen.blit(valor, (30, 105))
 
         if posicion in posicion2 and mouse[0] == True or posicion in posicion2 and mouse[2] == True:
