@@ -67,6 +67,9 @@ screen.blit(enturno, (520, 275))
 "Comprobador de ganador jugador"
 jugadorx=[]
 jugadoro=[]
+Matrix=[[3,3,3]
+        [3,3,3]
+        [3,3,3,]]
 
 "Estado de las jugadas"
 estadofigura = [False, False]
