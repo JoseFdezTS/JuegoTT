@@ -73,10 +73,13 @@ Matrix=([[None,None,None],
 
 "Estado de las jugadas"
 estadofigura = [False, False]
+jugador = None
+validador = [True]
+verificador = []
 
 def click(numero):
     figura = blanco
-    print (estadofigura)
+    #print (estadofigura)
     if mouse[0] == True and estadofigura[0] == False:
         figura = figuradeo
         screen.blit(blanco, (posicionx, posiciony))
@@ -87,8 +90,9 @@ def click(numero):
             estado[numero] = True
             jugadoro.append(1+numero)
             jugadoro.sort()
-            print("Jugador del O "+str(jugadoro))
-            print(estado)
+            #print("Jugador del O "+str(jugadoro))
+            #print(estado)
+
     if mouse[2] == True and estadofigura[1] == False:
         figura = figuradex
         screen.blit(blanco, (posicionx, posiciony))
@@ -99,9 +103,10 @@ def click(numero):
             estado[numero] = True
             jugadorx.append(1+numero)
             jugadorx.sort()
-            print ("Jugador de la X "+str(jugadorx))
-            print(estado)
+            #print ("Jugador de la X "+str(jugadorx))
+            #print(estado)
     return figura
+
 
 "Estados de las imagenes"
 estado = [False,False,False,False,False,False,False,False,False]
@@ -118,8 +123,8 @@ posicion8 = []
 posicion9 = []
 
 "creacion de cuadro de localizadorar"
-for a in range (30,155,1):
-    for b in range (120,225,1):
+for a in range (30,165,1):
+    for b in range (120,230,1):
         #if not (a,b) in posicion1:
         posicion1.append((a,b))
         #if not (a,b) in posicion4:
@@ -127,8 +132,8 @@ for a in range (30,155,1):
         # if not (a,b) in posicion7:
         posicion7.append((300+ a, b))
 
-for a in range (30,155,1):
-    for b in range (245,340,1):
+for a in range (30,165,1):
+    for b in range (245,345,1):
         #if not (a,b) in posicion2:
         posicion2.append((a,b))
         #if not (a,b) in posicion5:
@@ -136,8 +141,8 @@ for a in range (30,155,1):
         # if not (a,b) in posicion8:
         posicion8.append((300 + a, b))
 
-for a in range (30,155,1):
-    for b in range (415,530,1):
+for a in range (30,165,1):
+    for b in range (415,535,1):
         #if not (a,b) in posicion3:
         posicion3.append((a,b))
         #if not (a,b) in posicion6:
@@ -261,6 +266,17 @@ def ganador():
     return resultado
 
 
+def probando(arreglo):
+    contador=0
+    while validador[0] == True:
+        for a in arreglo:
+            verificador.append(a)
+            print (verificador)
+            if verificador == [[0,0,0]] or verificador == [[1,1,1]]:
+                print ("Ganador es" + str(verificador))
+            else:
+                verificador=[]
+    return verificador
 
 while True:
     "Titulo de Juego"
@@ -279,7 +295,12 @@ while True:
     screen.blit(contadortiempo,(10,5))
     "Mover Imagen Mouse"
     mouse = pygame.mouse.get_pressed()
+    if mouse[0]==True:
+        jugador=0
+    else:
+        jugador=1
     posicion=pygame.mouse.get_pos(posicionmousex, posicionmousey)
+    #print (posicion)
     velocidad=20
     if ganador()!=None:
         velocidad=5
@@ -291,75 +312,76 @@ while True:
             if estado[0] == False:
                 numero=0
                 valor = click(numero)
-                Matrix[0][0]=numero
-                print(Matrix[0])
+                Matrix[0][0] = jugador
+                #print(Matrix[0])
                 screen.blit(valor, (30, 105))
 
         if posicion in posicion2 and mouse[0] == True or posicion in posicion2 and mouse[2] == True:
             if estado[1] == False:
                 numero = 1
                 valor2 = click(numero)
-                Matrix[1][0] = numero
-                print(Matrix[1])
+                Matrix[1][0] = jugador
+                #print(Matrix[1])
                 screen.blit(valor2, (30, 260))
 
         if posicion in posicion3 and mouse[0] == True or posicion in posicion3 and mouse[2] == True:
             if estado[2] == False:
                 numero = 2
                 valor3 = click(numero)
-                Matrix[2][0] = numero
-                print(Matrix[1])
+                Matrix[2][0] = jugador
+                #print(Matrix[1])
                 screen.blit(valor3, (30,420))
 
         if posicion in posicion4 and mouse[0] == True or posicion in posicion4 and mouse[2] == True:
             if estado[3] == False:
                 numero = 3
                 valor4 = click(numero)
-                Matrix[0][1] = numero
-                print(Matrix[0])
+                Matrix[0][1] = jugador
+                #print(Matrix[0])
                 screen.blit(valor4, (180, 105))
 
         if posicion in posicion5 and mouse[0] == True or posicion in posicion5 and mouse[2] == True:
             if estado[4] == False:
                 numero = 4
                 valor5 = click(numero)
-                Matrix[1][1] = numero
-                print(Matrix[1])
+                Matrix[1][1] = jugador
+                #print(Matrix[1])
                 screen.blit(valor5, (180, 260))
 
         if posicion in posicion6 and mouse[0] == True or posicion in posicion6 and mouse[2] == True:
             if estado[5] == False:
                 numero = 5
                 valor6 = click(numero)
-                Matrix[2][1] = numero
-                print(Matrix[2])
+                Matrix[2][1] = jugador
+                #print(Matrix[2])
                 screen.blit(valor6, (180, 420))
 
         if posicion in posicion7 and mouse[0] == True or posicion in posicion7 and mouse[2] == True:
             if estado[6] == False:
                 numero = 6
                 valor7 = click(numero)
-                Matrix[0][2] = numero
-                print(Matrix[0])
+                Matrix[0][2] = jugador
+                #print(Matrix[0])
                 screen.blit(valor7, (335, 105))
 
         if posicion in posicion8 and mouse[0] == True or posicion in posicion8 and mouse[2] == True:
             if estado[7] == False:
                 numero = 7
                 valor8 = click(numero)
-                Matrix[1][2] = numero
-                print(Matrix[1])
+                Matrix[1][2] = jugador
+                #print(Matrix[1])
                 screen.blit(valor8, (335, 260))
 
         if posicion in posicion9 and mouse[0] == True or posicion in posicion9 and mouse[2] == True:
             if estado[8] == False:
                 numero = 8
                 valor9 = click(numero)
-                Matrix[2][2] = numero
-                print(Matrix[2])
+                Matrix[2][2] = jugador
+                #print(Matrix[2])
                 screen.blit(valor9, (335, 420))
     numero=None
     pygame.display.flip()
+    probando(Matrix)
     for event in pygame.event.get():
         # check if the event is the X button
         if event.type==pygame.QUIT:
@@ -367,4 +389,4 @@ while True:
             pygame.quit()
             exit(0)
     tiempodeactualizacion.tick(velocidad)
-    print (Matrix)
+    #print (Matrix)
