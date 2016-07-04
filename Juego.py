@@ -75,7 +75,6 @@ Matrix=([[None,None,None],
 estadofigura = [False, False]
 jugador = None
 validador = [True]
-verificador = []
 
 def click(numero):
     figura = blanco
@@ -186,10 +185,10 @@ def ganador():
     if len(jugadorx) <= 4 or len(jugadoro) <= 4:
         if jugadorx == jugada1 or jugadorx == jugada2 or jugadorx == jugada3 or jugadorx == jugada4 or jugadorx == jugada5 or jugadorx == jugada6 or jugadorx == jugada7 or jugadorx == jugada8:
             resultado = "Ganador el jugador de la X"
-            screen.blit(ganadory, (25, 100))
+            #screen.blit(ganadory, (25, 100))
         if jugadoro == jugada1 or jugadoro == jugada2 or jugadoro == jugada3 or jugadoro == jugada4 or jugadoro == jugada5 or jugadoro == jugada6 or jugadoro == jugada7 or jugadoro == jugada8:
             resultado = "Ganador el jugador de la O"
-            screen.blit(ganadoro, (25, 100))
+            #screen.blit(ganadoro, (25, 100))
     if len(jugadorx) > 3 or len(jugadoro) > 3:
         for x in jugadorx:
             if x in jugada1:
@@ -259,24 +258,28 @@ def ganador():
                     creadory8.append(y)
             if creador == jugada1 or creador2 == jugada2 or creador3 == jugada3 or creador4 == jugada4 or creador5 == jugada5 or creador6 == jugada6 or creador7 == jugada7 or creador8 == jugada8:
                 resultado = "Ganador el jugador de la X"
-                screen.blit(ganadory, (25, 100))
+                #screen.blit(ganadory, (25, 100))
             if creadory == jugada1 or creadory2 == jugada2 or creadory3 == jugada3 or creadory4 == jugada4 or creadory5 == jugada5 or creadory6 == jugada6 or creadory7 == jugada7 or creadory8 == jugada8:
                 resultado = "Ganador el jugador de la O"
-                screen.blit(ganadoro, (25, 100))
+                #screen.blit(ganadoro, (25, 100))
     return resultado
 
 
 def probando(arreglo):
     contador=0
+    verificador = []
+    #print (contador)
+    #print (validador)
     while validador[0] == True:
         for a in arreglo:
             verificador.append(a)
             print (verificador)
             if verificador == [[0,0,0]] or verificador == [[1,1,1]]:
                 print ("Ganador es" + str(verificador))
+                validador[0]=False
             else:
-                verificador=[]
-    return verificador
+                verificador = []
+        return validador
 
 while True:
     "Titulo de Juego"
