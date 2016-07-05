@@ -265,20 +265,50 @@ def ganador():
     return resultado
 
 
+def Quiengano(datos):
+    if datos==[0,0,0]:
+        screen.blit(ganadoro, (25, 100))
+    else:
+        screen.blit(ganadory, (25, 100))
+    return None
+
 def probando(arreglo):
-    contador=0
     verificador = []
-    #print (contador)
-    #print (validador)
+    diagonal = []
+    diagonalnegativo =[]
     while validador[0] == True:
         for a in arreglo:
             verificador.append(a)
-            print (verificador)
+            #print (verificador)
             if verificador == [[0,0,0]] or verificador == [[1,1,1]]:
-                print ("Ganador es" + str(verificador))
+                #print ("Ganador es" + str(verificador))
+                Quiengano(verificador[0])
                 validador[0]=False
             else:
                 verificador = []
+
+        for b in range(0, len(arreglo), 1):
+            for c in range(0, len(arreglo), 1):
+                if b == c:
+                    diagonal.append(arreglo[b][c])
+                    # print(diagonal)
+                if diagonal == [0, 0, 0] or diagonal == [1, 1, 1]:
+                    # print("Ganador es" + str(diagonal))
+                    Quiengano(diagonal)
+                    validador[0] = False
+                    # print (arreglo[b][c])
+
+        for f in range(0,2,1):
+            for g in range(2,-1,-1):
+                if f == g:
+                    print (f,g)
+                    diagonalnegativo.append(arreglo[f][g])
+                    print(diagonalnegativo)
+                if diagonalnegativo == [0, 0, 0] or diagonalnegativo == [1, 1, 1]:
+                    #print("Ganador es" + str(diagonalnegativo))
+                    Quiengano(diagonalnegativo)
+                    validador[0] = False
+                    # print (arreglo[b][c])
         return validador
 
 while True:
@@ -304,10 +334,10 @@ while True:
         jugador=1
     posicion=pygame.mouse.get_pos(posicionmousex, posicionmousey)
     #print (posicion)
-    velocidad=20
+    velocidad=25
     if ganador()!=None:
         velocidad=5
-    if len(jugadorx)>=5 or len(jugadoro)>=5:
+    if len(jugadorx)>=5 and len(jugadoro)>=5:
         break
     else:
         "Sentencias de colocacion de la x y o"
